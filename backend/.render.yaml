@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: todo-backend
+    env: java
+    plan: free
+    buildCommand: ./gradlew build
+    startCommand: java -jar build/libs/app-0.0.1-SNAPSHOT.jar
+    rootDir: backend
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:postgresql://dpg-d1ttpp2dbo4c73e0gqag-a.oregon-postgres.render.com/tododb_or6d
+      - key: SPRING_DATASOURCE_USERNAME
+        value: root
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: iqMCfhEFZ7fEukTjmXSrGqc9lEesKdeq

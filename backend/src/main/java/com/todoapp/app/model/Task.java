@@ -18,14 +18,15 @@ public class Task {
 
     private LocalDateTime date;
 
-    @Column(nullable = false)
-    private boolean done;
+    // @Column(nullable = false)
+    @JsonProperty("done")
+    private boolean isDone;
 
-    public boolean isDone() {
-        return this.done;
+    public boolean isIsDone() {
+        return this.isDone;
     }
 
-    // // public void setDone(boolean done) {
-    // //     this.done = done;
-    // // }
+    public void setIsDone(boolean done) {
+        isDone = done;
+    }
 }

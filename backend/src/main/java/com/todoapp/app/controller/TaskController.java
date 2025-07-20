@@ -33,7 +33,7 @@ public class TaskController {
     .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Task not found"));
         task.setTitle(updatedTask.getTitle());
         task.setDate(updatedTask.getDate());
-        task.setDone(updatedTask.isDone());
+        task.setIsDone(updatedTask.isIsDone());
         return taskRepository.save(task);
     }
 

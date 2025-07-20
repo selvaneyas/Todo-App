@@ -18,11 +18,12 @@ public class Task {
 
     private LocalDateTime date;
 
+    @Column(nullable = false)
     private boolean done;
 
-    // public void IsDone(boolean done) {
-    //     this.done = done;
-    // }
+    public boolean isDone() {
+        return this.done;
+    }
 
     // // public void setDone(boolean done) {
     // //     this.done = done;

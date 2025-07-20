@@ -31,7 +31,7 @@ public class TaskController {
         Task task = taskRepository.findById(id).orElseThrow();
         task.setTitle(updatedTask.getTitle());
         task.setDate(updatedTask.getDate());
-        task.setIsDone(updatedTask.isDone());
+        task.setDone(updatedTask.isDone());
         return taskRepository.save(task);
     }
 

@@ -18,9 +18,13 @@ public class Task {
 
     private LocalDateTime date;
 
-    private boolean isDone;
+    private boolean done;
 
-    public void setIsDone(boolean done) {
-        isDone = done;
-    }
+    // public void setIsDone(boolean done) {
+    //     isDone = done;
+    // }
+
+    // public void setDone(boolean done) {
+    //     this.done = done;
+    // }
 }

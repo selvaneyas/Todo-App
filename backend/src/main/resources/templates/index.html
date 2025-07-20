@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Todo API Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f8;
+        }
+
+        header {
+            background: #000;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+
+        table {
+            margin: 40px auto;
+            width: 90%;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 16px;
+            text-align: left;
+        }
+
+        th {
+            background: #1d1d1f;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .status-ok {
+            color: green;
+            font-weight: bold;
+        }
+
+        .status-fail {
+            color: red;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+<header>📱 Todo API Dashboard</header>
+
+<table>
+    <tr>
+        <th>Method</th>
+        <th>Endpoint</th>
+        <th>Description</th>
+        <th>Status</th>
+    </tr>
+    <tr th:each="api : ${apis}">
+        <td th:text="${api.method}"></td>
+        <td><code th:text="${api.endpoint}"></code></td>
+        <td th:text="${api.description}"></td>
+        <td th:text="${api.status}" th:classappend="${api.status == 'WORKING'} ? 'status-ok' : 'status-fail'"></td>
+    </tr>
+</table>
+
+<footer> Developed by Selva Neyas © 2025 | Render Logs Available in Console</footer>
+</body>
+</html>

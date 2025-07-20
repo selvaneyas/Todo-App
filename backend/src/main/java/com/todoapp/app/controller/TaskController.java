@@ -1,6 +1,7 @@
 package com.todoapp.app.controller;
 
-
+import org.springframework.web.server.ResponseStatusException;
+import org.springframework.http.HttpStatus;
 import com.todoapp.app.model.Task;
 import com.todoapp.app.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,8 @@ public class TaskController {
 
     @PutMapping("/{id}")
     public Task updateTask(@PathVariable Long id, @RequestBody Task updatedTask) {
-        Task task = taskRepository.findById(id).orElseThrow();
+        Task task = taskRepository.findById(id)
+    .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Task not found"));
         task.setTitle(updatedTask.getTitle());
         task.setDate(updatedTask.getDate());
         task.setDone(updatedTask.isDone());

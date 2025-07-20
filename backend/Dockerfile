@@ -1,25 +1,17 @@
-# Use a base image with Java and Gradle
-FROM gradle:8.4.0-jdk21 as builder
+# Use OpenJDK base image
+FROM openjdk:21-jdk-slim
 
 # Set working directory
 WORKDIR /app
 
-# Copy everything
+# Copy Gradle wrapper and build files
 COPY . .
 
-# Build the application
-RUN gradle build --no-daemon
+# Give permission to gradlew
+RUN chmod +x ./gradlew
 
-# ----------------------------
+# Build the app
+RUN ./gradlew build
 
-# Use a smaller runtime image
-FROM eclipse-temurin:17-jdk
-
-# Set working directory
-WORKDIR /app
-
-# Copy the jar from the builder stage
-COPY --from=builder /app/build/libs/*.jar app.jar
-
-# Run the app
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Set the startup command
+CMD ["java", "-jar", "build/libs/app-0.0.1-SNAPSHOT.jar"]

@@ -20,11 +20,11 @@ public class Task {
 
     private boolean done;
 
-    // public void setIsDone(boolean done) {
-    //     isDone = done;
-    // }
-
-    // public void setDone(boolean done) {
+    // public void IsDone(boolean done) {
     //     this.done = done;
     // }
+
+    // // public void setDone(boolean done) {
+    // //     this.done = done;
+    // // }
 }

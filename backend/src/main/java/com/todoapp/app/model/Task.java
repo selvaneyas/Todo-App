@@ -1,4 +1,5 @@
 package com.todoapp.app.model;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.*;
 import lombok.*;

@@ -16,7 +16,8 @@ This is a full-stack To-Do List application developed with:
 | Hosting  | Netlify (Frontend), Render (Backend) |
 
 ## 📸 Screenshot
-![App Screenshot](https://drive.google.com/file/d/11_Pb8b8VT4VEaTbiyU0QqaTB4hIb53Fw/view?usp=drive_link)
+![App Screenshot](/images/screnshot-output0.PNG)
+![App Screenshot](/images/screnshot-output1.PNG)
 
 ## 🚀 Features
 - Add, delete, and mark tasks as completed

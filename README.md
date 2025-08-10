@@ -5,14 +5,14 @@ This is a full-stack To-Do List application developed with:
 ## 🛠️ Tech Stack
 - **Frontend**: Flutter Web
 - **Backend**: Spring Boot + REST API
-- **Database**: MySQL
+- **Database**: PostgreSQL
 - **Hosting**: Deployed on Netlify
 
 | Layer    | Technology                           |
 | -------- | ------------------------------------ |
 | Frontend | Flutter Web + Material UI            |
 | Backend  | Spring Boot + REST API               |
-| Database | MySQL                                |
+| Database | PostgreSQL                           |
 | Hosting  | Netlify (Frontend), Render (Backend) |
 
 ## 📸 Screenshot
